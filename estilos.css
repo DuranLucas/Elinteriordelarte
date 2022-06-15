@@ -1,0 +1,86 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+#GridEstructura{
+    display: grid;
+    grid-template-areas: 
+    "cabeza cabeza"
+    "menu cuerpo"
+    "pie pie";
+    grid-template-columns: 17% auto;
+    grid-template-rows: 1fr 10fr 0.4fr;
+}
+header{
+    grid-area: cabeza;
+    background-color: rgb(18, 83, 114);
+    font-size: 1.8rem;
+}
+.cabeza{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.logo{
+    width: 80px;
+    margin-left: 50px;
+}
+.logo2{
+    width: 70px;
+    margin-left: 50px;
+}
+
+nav{
+    grid-area: menu;
+    grid-row-gap: 20px;
+    background-color: rgb(60, 207, 188);
+}
+nav span{
+    padding: 10px 25px;
+    background-color:rgb(18, 83, 114);
+    margin: 10px;
+}
+span a{
+    text-decoration: none;
+    color:white
+}
+main{
+    grid-area: cuerpo;
+}
+footer{
+    grid-area: pie;
+    background-color: rgb(18, 83, 114);
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+    padding: 10px;
+    font-size: 1.2rem;
+}
+.menuflex{
+    display: flex;
+    flex-flow: column nowrap;
+}
+span:hover{
+    opacity: 0.5;
+    border-left: solid 5px white;
+}
+article{
+    margin: 40px 20px;
+}
+@keyframes menuAnimation{
+    from{
+        transform: translateX(-200px);
+        opacity: 0;
+    }
+    to{
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+.animation{
+    animation-name: menuAnimation;
+    animation-duration: 1.5s;
+}
