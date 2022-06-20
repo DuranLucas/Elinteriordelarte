@@ -1,0 +1,126 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+#GridEstructura {
+  display: grid;
+  grid-template-areas: "cabeza cabeza" "menu cuerpo" "pie pie";
+  grid-template-columns: 17% auto;
+  grid-template-rows: 15vh auto 40px;
+}
+
+.cabeza {
+  display: flex;
+  justify-content: center;
+  justify-items: center;
+  align-items: center;
+}
+
+.menuflex {
+  display: flex;
+  flex-flow: column nowrap;
+}
+
+header {
+  grid-area: cabeza;
+  background-color: rgb(18, 83, 114);
+  font-size: 1.8rem;
+  padding: 10px;
+}
+header .logo {
+  width: 80px;
+  margin-left: 50px;
+}
+header .logo2 {
+  width: 70px;
+  margin-left: 50px;
+}
+
+nav {
+  grid-area: menu;
+  grid-row-gap: 20px;
+  background-color: rgb(60, 207, 188);
+}
+nav .animation {
+  animation-name: menuAnimation;
+  animation-duration: 1.5s;
+}
+nav span {
+  padding: 10px 25px;
+  background-color: rgb(18, 83, 114);
+  margin: 10px;
+}
+nav span:hover {
+  opacity: 0.5;
+  border-left: solid 5px white;
+}
+nav span a {
+  text-decoration: none;
+  color: white;
+  width: 100%;
+}
+
+main {
+  grid-area: cuerpo;
+  padding: 20px;
+}
+main article {
+  margin-bottom: 20px;
+}
+
+footer {
+  grid-area: pie;
+  background-color: rgb(18, 83, 114);
+  display: flex;
+  justify-content: space-between;
+  align-content: center;
+  padding: 10px;
+  font-size: 1.2rem;
+}
+
+@keyframes menuAnimation {
+  from {
+    transform: translateX(-200px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+@media (max-width: 1200px) {
+  #GridEstructura {
+    grid-template-columns: 20% auto;
+  }
+}
+@media (max-width: 992px) {
+  #GridEstructura {
+    grid-template-columns: 24% auto;
+  }
+}
+@media (max-width: 768px) {
+  #GridEstructura {
+    grid-template-columns: 100%;
+    grid-template-rows: auto;
+    grid-template-areas: "cabeza" "menu" "cuerpo" "pie";
+  }
+  #GridEstructura a {
+    font-size: 1.2rem;
+  }
+  #GridEstructura header {
+    font-size: 1.7rem;
+  }
+  #GridEstructura header .logo {
+    width: 70px;
+    margin: 15px;
+  }
+  #GridEstructura header .logo2 {
+    width: 60px;
+    margin: 15px;
+  }
+}
+
+/*# sourceMappingURL=estilos.css.map */
