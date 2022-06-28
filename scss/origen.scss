@@ -21,7 +21,7 @@
     "menu cuerpo"
     "pie pie";
     grid-template-columns: 17% auto;
-    grid-template-rows: 15vh auto 240px;
+    grid-template-rows: 130px auto 240px;
 }
 .menuflex{
     display: flex;
@@ -36,10 +36,13 @@ header{
     font-size: 1.8rem;
     padding: 10px;
     .logo{
-        @include medidaslogos(80px, 80px, 50px)
+        @include medidaslogos(80px, 80px, 0px)
     }
     .logo2{
-        @include medidaslogos(70px, 70px, 50px)
+        @include medidaslogos(70px, 70px, 0px)
+    }
+    a{
+        margin-left: 50px;
     }
 }
 nav{
@@ -84,7 +87,7 @@ main{
     }
     .contacto2{
         margin: 0 15px;
-        font-size: 2rem;
+        font-size: 1.6rem;
     }
 }
 footer{
@@ -95,30 +98,31 @@ footer{
     padding: 10px;
     font-size: 1.2rem;    
     iframe{
-        @include medidas(45%, 220px)
+        @include medidas(25%, 220px)
+    }
+    span{
+        width: 20%;
     }
     a{
         text-decoration: none;
         color: black;
         margin: 10px;
-        width: 15%;
     }
     .divf1{
     display: flex;
     flex-flow: row wrap;
-    width: 40%;
+    width: 55%;
     align-content: space-between;
     }
     div .divf4{
-        margin: 10px;
+        margin: 0px 40px;
         border-bottom: 1px solid rgb(234, 236, 239);
     }
     div .divf3{
         font-size: 1rem;
-        margin: 10px;
+        margin: 5px 40px;
     }
 }
-
 @keyframes menuAnimation{
     from{
         transform: translateX(-200px);
@@ -146,7 +150,7 @@ footer{
         grid-template-columns: 24% auto;
         .contactomain{
             .contacto2{
-            font-size: 1.1rem;
+            font-size: 1rem;
             }
         }
     }
@@ -156,11 +160,22 @@ footer{
         .divf1{
             width: 45%;
         }
+        div{
+            font-size: 0.8rem;
+        }
         iframe{
             @include medidas(40%, 200px)
         }
-        div{
+        .divf31{
+            display: none;
+        }
+        .divf32{
             font-size: 0.8rem;
+            margin: 5px 20px;
+        }
+        .divf4{
+            margin: 5px 20px;
+            border-bottom: 1px solid rgb(234, 236, 239);
         }
         a{
             font-size: 1rem;
@@ -176,11 +191,14 @@ footer{
             font-size: 1.7rem;
             .logo{
                 width: 70px;
-                margin: 15px;
+                margin: 0px 15px;
             }
             .logo2{
                 width: 60px;
-                margin: 15px;
+                margin: 0px 15px;
+            }
+            a{
+                margin-left: 0px;
             }
         }
         .contactomain{

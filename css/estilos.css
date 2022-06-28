@@ -9,7 +9,7 @@
   display: grid;
   grid-template-areas: "cabeza cabeza" "menu cuerpo" "pie pie";
   grid-template-columns: 17% auto;
-  grid-template-rows: 15vh auto 240px;
+  grid-template-rows: 130px auto 240px;
 }
 
 .menuflex {
@@ -29,11 +29,14 @@ header {
 header .logo {
   width: 80px;
   height: 80px;
-  margin-left: 50px;
+  margin-left: 0px;
 }
 header .logo2 {
   width: 70px;
   height: 70px;
+  margin-left: 0px;
+}
+header a {
   margin-left: 50px;
 }
 
@@ -83,7 +86,7 @@ main article img {
 }
 .contactomain .contacto2 {
   margin: 0 15px;
-  font-size: 2rem;
+  font-size: 1.6rem;
 }
 
 footer {
@@ -95,28 +98,30 @@ footer {
   font-size: 1.2rem;
 }
 footer iframe {
-  width: 45%;
+  width: 25%;
   height: 220px;
+}
+footer span {
+  width: 20%;
 }
 footer a {
   text-decoration: none;
   color: black;
   margin: 10px;
-  width: 15%;
 }
 footer .divf1 {
   display: flex;
   flex-flow: row wrap;
-  width: 40%;
+  width: 55%;
   align-content: space-between;
 }
 footer div .divf4 {
-  margin: 10px;
+  margin: 0px 40px;
   border-bottom: 1px solid rgb(234, 236, 239);
 }
 footer div .divf3 {
   font-size: 1rem;
-  margin: 10px;
+  margin: 5px 40px;
 }
 
 @keyframes menuAnimation {
@@ -143,7 +148,7 @@ footer div .divf3 {
     grid-template-columns: 24% auto;
   }
   #GridEstructura .contactomain .contacto2 {
-    font-size: 1.1rem;
+    font-size: 1rem;
   }
 }
 @media (max-width: 768px) {
@@ -155,12 +160,23 @@ footer div .divf3 {
   #GridEstructura .divf1 {
     width: 45%;
   }
+  #GridEstructura div {
+    font-size: 0.8rem;
+  }
   #GridEstructura iframe {
     width: 40%;
     height: 200px;
   }
-  #GridEstructura div {
+  #GridEstructura .divf31 {
+    display: none;
+  }
+  #GridEstructura .divf32 {
     font-size: 0.8rem;
+    margin: 5px 20px;
+  }
+  #GridEstructura .divf4 {
+    margin: 5px 20px;
+    border-bottom: 1px solid rgb(234, 236, 239);
   }
   #GridEstructura a {
     font-size: 1rem;
@@ -170,11 +186,14 @@ footer div .divf3 {
   }
   #GridEstructura header .logo {
     width: 70px;
-    margin: 15px;
+    margin: 0px 15px;
   }
   #GridEstructura header .logo2 {
     width: 60px;
-    margin: 15px;
+    margin: 0px 15px;
+  }
+  #GridEstructura header a {
+    margin-left: 0px;
   }
   #GridEstructura .contactomain {
     display: flex;
