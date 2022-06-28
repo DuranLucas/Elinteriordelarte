@@ -9,14 +9,7 @@
   display: grid;
   grid-template-areas: "cabeza cabeza" "menu cuerpo" "pie pie";
   grid-template-columns: 17% auto;
-  grid-template-rows: 15vh auto 40px;
-}
-
-.cabeza {
-  display: flex;
-  justify-content: center;
-  justify-items: center;
-  align-items: center;
+  grid-template-rows: 15vh auto 240px;
 }
 
 .menuflex {
@@ -26,16 +19,21 @@
 
 header {
   grid-area: cabeza;
-  background-color: rgb(22, 77, 109);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: linear-gradient(to right, rgb(22, 77, 109), rgb(60, 207, 188));
   font-size: 1.8rem;
   padding: 10px;
 }
 header .logo {
   width: 80px;
+  height: 80px;
   margin-left: 50px;
 }
 header .logo2 {
   width: 70px;
+  height: 70px;
   margin-left: 50px;
 }
 
@@ -43,6 +41,7 @@ nav {
   grid-area: menu;
   grid-row-gap: 20px;
   background-color: rgb(60, 207, 188);
+  background-image: linear-gradient(rgb(60, 207, 188), rgba(125, 134, 138, 0.966));
 }
 nav .animation {
   animation-name: menuAnimation;
@@ -73,20 +72,51 @@ main article {
 }
 main article img {
   width: 200px;
+  height: 200px;
+}
+
+.contactomain {
+  display: flex;
+}
+.contactomain .contacto1 {
+  font-size: 1.2rem;
+}
+.contactomain .contacto2 {
+  margin: 0 15px;
+  font-size: 2rem;
 }
 
 footer {
   grid-area: pie;
   background-color: rgb(22, 77, 109);
+  background-image: linear-gradient(to right, rgb(22, 77, 109), rgb(60, 207, 188));
   display: flex;
-  justify-content: space-between;
-  align-content: center;
   padding: 10px;
   font-size: 1.2rem;
+}
+footer iframe {
+  width: 45%;
+  height: 220px;
 }
 footer a {
   text-decoration: none;
   color: black;
+  margin: 10px;
+  width: 15%;
+}
+footer .divf1 {
+  display: flex;
+  flex-flow: row wrap;
+  width: 40%;
+  align-content: space-between;
+}
+footer div .divf4 {
+  margin: 10px;
+  border-bottom: 1px solid rgb(234, 236, 239);
+}
+footer div .divf3 {
+  font-size: 1rem;
+  margin: 10px;
 }
 
 @keyframes menuAnimation {
@@ -104,10 +134,16 @@ footer a {
   #GridEstructura {
     grid-template-columns: 20% auto;
   }
+  #GridEstructura .contactomain .contacto2 {
+    font-size: 1.4rem;
+  }
 }
 @media (max-width: 992px) {
   #GridEstructura {
     grid-template-columns: 24% auto;
+  }
+  #GridEstructura .contactomain .contacto2 {
+    font-size: 1.1rem;
   }
 }
 @media (max-width: 768px) {
@@ -116,8 +152,18 @@ footer a {
     grid-template-rows: auto;
     grid-template-areas: "cabeza" "menu" "cuerpo" "pie";
   }
+  #GridEstructura .divf1 {
+    width: 45%;
+  }
+  #GridEstructura iframe {
+    width: 40%;
+    height: 200px;
+  }
+  #GridEstructura div {
+    font-size: 0.8rem;
+  }
   #GridEstructura a {
-    font-size: 1.2rem;
+    font-size: 1rem;
   }
   #GridEstructura header {
     font-size: 1.7rem;
@@ -130,6 +176,54 @@ footer a {
     width: 60px;
     margin: 15px;
   }
+  #GridEstructura .contactomain {
+    display: flex;
+    flex-flow: row wrap;
+  }
+  #GridEstructura .contactomain .contacto1 {
+    font-size: 1.2rem;
+  }
+  #GridEstructura .contactomain .contacto2 {
+    margin: 50px 15px 20px;
+    font-size: 1.5rem;
+  }
+}
+/************* BUCLES ************/
+.logo-1 {
+  width: 200px;
+  height: 200px;
+}
+
+.logo-2 {
+  width: 100px;
+  height: 100px;
+}
+
+/***************
+EACH Y MAPS
+****************/
+.fondo-header {
+  background-image: url(img/header.jpg);
+}
+
+.fondo-main {
+  background-image: url(img/main.jpg);
+}
+
+.fondo-footer {
+  background-image: url(img/footer.jpg);
+}
+
+.boton-Instagram {
+  background-color: violet;
+}
+
+.boton-Facebook {
+  background-color: blue;
+}
+
+.boton-Youtube {
+  background-color: red;
 }
 
 /*# sourceMappingURL=estilos.css.map */

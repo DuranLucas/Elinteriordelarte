@@ -1,11 +1,18 @@
 @import "colors";
-// variables //
-$imagenbody: 200px;
 *{
     margin: 0px;
     padding: 0px;
     box-sizing: border-box;
     font-family: sans-serif;
+}
+@mixin medidas ($ancho, $alto) {
+    width: $ancho;
+    height: $alto;
+}
+@mixin medidaslogos ($ancho, $alto, $ml) {
+    width: $ancho;
+    height: $alto;
+    margin-left: $ml;
 }
 #GridEstructura{
     display: grid;
@@ -14,13 +21,7 @@ $imagenbody: 200px;
     "menu cuerpo"
     "pie pie";
     grid-template-columns: 17% auto;
-    grid-template-rows: 15vh auto 40px;
-}
-.cabeza{
-    display: flex;
-    justify-content: center;
-    justify-items: center;
-    align-items: center;
+    grid-template-rows: 15vh auto 240px;
 }
 .menuflex{
     display: flex;
@@ -28,22 +29,24 @@ $imagenbody: 200px;
 }
 header{
     grid-area: cabeza;
-    background-color:$fondo1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: linear-gradient(to right, $fondo1, $fondo2);
     font-size: 1.8rem;
     padding: 10px;
     .logo{
-        width: 80px;
-        margin-left: 50px;
+        @include medidaslogos(80px, 80px, 50px)
     }
     .logo2{
-        width: 70px;
-        margin-left: 50px;
+        @include medidaslogos(70px, 70px, 50px)
     }
 }
 nav{
     grid-area: menu;
     grid-row-gap: 20px;
     background-color: $fondo2;
+    background-image: linear-gradient($fondo2, $fondo3);
     .animation{
         animation-name: menuAnimation;
         animation-duration: 1.5s;
@@ -70,23 +73,52 @@ main{
     article{
         margin-bottom: 20px;
         img{
-            width: $imagenbody;
+            @include medidas(200px, 200px);
         }
+    }
+}
+.contactomain{
+    display: flex;
+    .contacto1{
+        font-size: 1.2rem;
+    }
+    .contacto2{
+        margin: 0 15px;
+        font-size: 2rem;
     }
 }
 footer{
     grid-area: pie;
     background-color: $fondo1;
+    background-image: linear-gradient(to right, $fondo1, $fondo2);
     display: flex;
-    justify-content: space-between;
-    align-content: center;
     padding: 10px;
-    font-size: 1.2rem;
+    font-size: 1.2rem;    
+    iframe{
+        @include medidas(45%, 220px)
+    }
     a{
         text-decoration: none;
         color: black;
+        margin: 10px;
+        width: 15%;
+    }
+    .divf1{
+    display: flex;
+    flex-flow: row wrap;
+    width: 40%;
+    align-content: space-between;
+    }
+    div .divf4{
+        margin: 10px;
+        border-bottom: 1px solid rgb(234, 236, 239);
+    }
+    div .divf3{
+        font-size: 1rem;
+        margin: 10px;
     }
 }
+
 @keyframes menuAnimation{
     from{
         transform: translateX(-200px);
@@ -102,17 +134,36 @@ footer{
 @media (max-width:1200px){
     #GridEstructura{
         grid-template-columns: 20% auto;
+        .contactomain{
+            .contacto2{
+                font-size: 1.4rem;
+            }
+        }
     }
 }
 @media (max-width:992px){
     #GridEstructura{
         grid-template-columns: 24% auto;
+        .contactomain{
+            .contacto2{
+            font-size: 1.1rem;
+            }
+        }
     }
 }
 @media (max-width:768px){
     #GridEstructura{
+        .divf1{
+            width: 45%;
+        }
+        iframe{
+            @include medidas(40%, 200px)
+        }
+        div{
+            font-size: 0.8rem;
+        }
         a{
-            font-size: 1.2rem;
+            font-size: 1rem;
         }
         grid-template-columns: 100%;
         grid-template-rows: auto;
@@ -132,5 +183,40 @@ footer{
                 margin: 15px;
             }
         }
+        .contactomain{
+            display: flex;
+            flex-flow: row wrap;
+            .contacto1{
+                font-size: 1.2rem;
+            }
+            .contacto2{
+            margin: 50px 15px 20px;
+            font-size: 1.5rem;
+            }
+        }
     }
 }
+/************* BUCLES ************/
+@for $bucle from 1 through 2 {
+    .logo-#{$bucle}{
+        width: calc(200px/$bucle);
+        height: calc(200px/$bucle);
+    }
+}
+/***************
+EACH Y MAPS
+****************/
+@each $secciones in header,main,footer {
+    .fondo-#{$secciones}{
+        background-image: url(img/#{$secciones}.jpg);
+    }
+}
+$mapa:  (Instagram:violet,
+         Facebook: blue,
+         Youtube: red );
+@each $redes, $color in $mapa {
+    .boton-#{$redes}{
+        background-color: $color;
+    }
+}
+
