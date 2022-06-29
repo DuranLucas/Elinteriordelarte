@@ -254,6 +254,11 @@ footer{
         }
     }
 }
+@media (max-width:440px){
+    h1{
+        font-size: 3rem;
+    }
+}
 /************* BUCLES ************/
 @for $bucle from 1 through 2 {
     .logo-#{$bucle}{
