@@ -60,6 +60,7 @@ nav{
         margin: 10px;
         padding: 10px 25px;
         background-color:$fondo1;
+        border-radius: 0 1em 1em 0;
         &:hover{
             opacity: 0.5;
             border-left: solid 5px white;
@@ -74,19 +75,56 @@ main{
     grid-area: cuerpo;
     padding: 20px;
     article{
+        text-align: center;
         margin-bottom: 20px;
+        p{
+            margin:5px;
+            border-bottom: 3px solid $fondo2;
+        }
         img{
             @include medidas(200px, 200px);
+            border: 2px solid $fondo3;
+            border-radius: 5%;
         }
+        h2{
+            margin:15px;
+            text-shadow: 1px 1px 1px $fondo3,  2px 2px 1px $fondo3;
+            a{
+                text-decoration: none;
+                color: black;
+                font-size: 2.2rem;
+            }        
+        }
+        h3{
+            margin:5px;
+        }
+    }
+    .pqs{
+        margin: 15px 20px;
+    }
+    .titulosAlternos{
+        margin: 15px 20px;
+        font-size: 1.9rem;
+    }
+    form{
+        margin: 15px 20px;
     }
 }
 .contactomain{
     display: flex;
     .contacto1{
         font-size: 1.2rem;
+        .botonenviar{
+            margin: 10px 0px;
+            @include medidas(70px, 30px);
+            background-color:$fondo1;
+            border-radius: 0.5rem;
+            color: white;
+            cursor: pointer;
+        }
     }
     .contacto2{
-        margin: 0 15px;
+        margin: 0 0 0 20px;
         font-size: 1.6rem;
     }
 }
@@ -157,6 +195,13 @@ footer{
 }
 @media (max-width:768px){
     #GridEstructura{
+        nav{
+            grid-row-gap: 10px;
+            text-align: center;
+            span{
+                font-size: 1.3rem;
+            }
+        }
         .divf1{
             width: 45%;
         }
@@ -180,6 +225,9 @@ footer{
         a{
             font-size: 1rem;
         }
+        h2 a{
+            font-size: 2rem;
+        }
         grid-template-columns: 100%;
         grid-template-rows: auto;
         grid-template-areas: 
@@ -189,16 +237,8 @@ footer{
         "pie";
         header{
             font-size: 1.7rem;
-            .logo{
-                width: 70px;
-                margin: 0px 15px;
-            }
-            .logo2{
-                width: 60px;
-                margin: 0px 15px;
-            }
             a{
-                margin-left: 0px;
+                margin: 15px;
             }
         }
         .contactomain{
