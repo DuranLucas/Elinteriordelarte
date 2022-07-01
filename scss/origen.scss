@@ -28,6 +28,7 @@
     flex-flow: column nowrap;
 }
 header{
+    border-bottom: 1px solid black;
     grid-area: cabeza;
     display: flex;
     justify-content: center;
@@ -46,6 +47,7 @@ header{
     }
 }
 nav{
+    border-right: 1px solid black;
     grid-area: menu;
     grid-row-gap: 20px;
     background-color: $fondo2;
@@ -105,15 +107,32 @@ main{
     .titulosAlternos{
         margin: 15px 20px;
         font-size: 1.9rem;
+        text-align: center;
+        text-shadow: 1px 1px 1px $fondo3,  2px 2px 1px $fondo3;
     }
     form{
         margin: 15px 20px;
     }
+    .productos1 h3{
+        text-align: center;
+    }
+    .productos1{
+        justify-content: center;
+    }
+}
+.titulosProductos{
+    font-size: 1.9rem;
+    margin: 15px 20px 40px 20px;
+    text-align: center;
+    text-shadow: 1px 1px 1px $fondo3,  2px 2px 1px $fondo3;
 }
 .contactomain{
     display: flex;
     .contacto1{
         font-size: 1.2rem;
+        .inputEmail{
+            margin-left: 20px;
+        }
         .botonenviar{
             margin: 10px 0px;
             @include medidas(70px, 30px);
@@ -129,12 +148,16 @@ main{
     }
 }
 footer{
+    border-top: 1px solid black;
     grid-area: pie;
     background-color: $fondo1;
     background-image: linear-gradient(to right, $fondo1, $fondo2);
     display: flex;
     padding: 10px;
     font-size: 1.2rem;    
+    .copy{
+        font-size: 0.8rem;
+    }
     iframe{
         @include medidas(25%, 220px)
     }
@@ -171,6 +194,19 @@ footer{
         opacity: 1;
     }
 }
+
+@for $bandeja from 1 through 8 {
+    .band#{$bandeja}{
+        border: 2px solid $fondo3;
+        border-radius: 5%;
+        margin: 8px 8px 32px 8px;
+        @include medidas(250px, 250px)
+    }
+}
+.productos1{
+    display: flex;
+    flex-wrap: wrap;
+}
 /* MEDIA QUERIES */
 
 @media (max-width:1200px){
@@ -196,7 +232,9 @@ footer{
 @media (max-width:768px){
     #GridEstructura{
         nav{
-            grid-row-gap: 10px;
+            border-right: none;
+            border-bottom: 1px solid black;
+            grid-row-gap: 0px;
             text-align: center;
             span{
                 font-size: 1.3rem;
@@ -204,9 +242,6 @@ footer{
         }
         .divf1{
             width: 45%;
-        }
-        div{
-            font-size: 0.8rem;
         }
         iframe{
             @include medidas(40%, 200px)
@@ -252,11 +287,15 @@ footer{
             font-size: 1.5rem;
             }
         }
+        .titulosProductos{
+            font-size: 3rem;
+            margin: 0px 0px 20px 0px;
+        }  
     }
 }
 @media (max-width:440px){
     h1{
-        font-size: 3rem;
+        font-size: 2.5rem;
     }
 }
 /************* BUCLES ************/
