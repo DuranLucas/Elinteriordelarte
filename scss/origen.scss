@@ -232,6 +232,10 @@ footer{
 @media (max-width:768px){
     #GridEstructura{
         nav{
+            .animation{
+                animation-name: menuAnimation;
+                animation-duration: 1s;
+            }
             border-right: none;
             border-bottom: 1px solid black;
             grid-row-gap: 0px;

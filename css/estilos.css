@@ -295,6 +295,10 @@ footer div .divf3 {
     grid-row-gap: 0px;
     text-align: center;
   }
+  #GridEstructura nav .animation {
+    animation-name: menuAnimation;
+    animation-duration: 1s;
+  }
   #GridEstructura nav span {
     font-size: 1.3rem;
   }
