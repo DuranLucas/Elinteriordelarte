@@ -76,10 +76,11 @@ main {
 main article {
   text-align: center;
   margin-bottom: 20px;
+  padding-bottom: 10px;
+  border-bottom: 3px solid rgb(60, 207, 188);
 }
 main article p {
   margin: 5px;
-  border-bottom: 3px solid rgb(60, 207, 188);
 }
 main article img {
   width: 200px;
@@ -116,6 +117,33 @@ main .productos1 h3 {
 }
 main .productos1 {
   justify-content: center;
+}
+main .seccionesproductos {
+  display: flex;
+  justify-content: space-evenly;
+  font-size: 2rem;
+  margin-bottom: 40px;
+  border: 3px solid rgb(60, 207, 188);
+  border-radius: 25%;
+  background-color: rgb(22, 77, 109);
+}
+main .seccionesproductos a {
+  text-decoration: none;
+  color: white;
+  margin: 20px;
+  background-color: rgba(125, 134, 138, 0.966);
+  border: 3px solid rgb(60, 207, 188);
+  padding: 5px;
+  width: 200px;
+  text-align: center;
+  border-radius: 30%;
+}
+main .seccionesproductos a:hover {
+  opacity: 0.5;
+  border-left: solid 10px white;
+}
+main .seccionesproductos .spanproductos {
+  padding: 5px;
 }
 
 .titulosProductos {
@@ -282,6 +310,12 @@ footer div .divf3 {
   #GridEstructura .contactomain .contacto2 {
     font-size: 1rem;
   }
+  #GridEstructura .seccionesproductos {
+    font-size: 1.6rem;
+  }
+  #GridEstructura .seccionesproductos a {
+    width: 135px;
+  }
 }
 @media (max-width: 768px) {
   #GridEstructura {
@@ -346,6 +380,9 @@ footer div .divf3 {
   #GridEstructura .titulosProductos {
     font-size: 3rem;
     margin: 0px 0px 20px 0px;
+  }
+  #GridEstructura .seccionesproductos a {
+    font-size: 1.3rem;
   }
 }
 @media (max-width: 440px) {
