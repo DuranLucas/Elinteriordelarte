@@ -382,15 +382,12 @@ footer div .divf3 {
     margin: 0px 0px 20px 0px;
   }
   #GridEstructura .seccionesproductos a {
-    font-size: 1.3rem;
+    font-size: 1rem;
   }
 }
 @media (max-width: 440px) {
   #GridEstructura h1 {
     font-size: 2.5rem;
-  }
-  #GridEstructura .seccionesproductos a {
-    font-size: 1rem;
   }
 }
 /************* BUCLES ************/
