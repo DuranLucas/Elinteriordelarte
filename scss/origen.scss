@@ -333,13 +333,20 @@ footer{
             a{
                 font-size: 1.3rem;
             }
-        }  
+        } 
     }
 }
 @media (max-width:440px){
-    h1{
+    #GridEstructura{
+        h1{
         font-size: 2.5rem;
-    }
+        }
+        .seccionesproductos{
+             a{
+                font-size: 1rem;
+            }
+        }
+    } 
 }
 /************* BUCLES ************/
 @for $bucle from 1 through 2 {
